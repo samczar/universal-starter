@@ -6,8 +6,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HttpService {
 	constructor(private http: HttpClient) {}
+	host = `${window.location.protocol}//${window.location.host}`;
 
-	url = 'http://localhost:4000/assets/gameApi/data.json';
+	url = `${this.host}/assets/gameApi/data.json`;
 
 	getGameLobby() {
 		return this.http.get(this.url);

@@ -2,14 +2,12 @@
 
 <app-search (searchEvent)="getSearch($event)"></app-search>
 <ul *ngIf="games">
-  <li *ngFor="let game of games | filter: searchText">
-    <!-- <div class="outter_panel">
-      <div class="image_body"> -->
-    <img src="{{ game.icon_2 }}" alt="{{ game.name }}" />
-    <!-- </div> -->
-    <!-- <div class="game_name"> -->
-    <p>{{ game.name }}</p>
-    <!-- </div> -->
-    <!-- </div> -->
-  </li>
+	<li *ngFor="let game of games | filter: searchText">
+		<img
+			src="{{ game.icon_2 }}"
+			alt="{{ game.name }}"
+			(error)="onImgError($event)"
+		/>
+		<p>{{ game.name }}</p>
+	</li>
 </ul>
