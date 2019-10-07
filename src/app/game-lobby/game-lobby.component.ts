@@ -22,5 +22,7 @@ export class GameLobbyComponent implements OnInit {
 
 	onImgError(event) {
 		event.target.src = 'assets/images/default.jpg';
+		event.target.width = '220';
+		event.target.height = '155';
 	}
 }
